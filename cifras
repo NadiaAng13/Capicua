@@ -1,0 +1,34 @@
+public class Capicua {
+
+public static boolean esCapicua(int numero) {
+
+    boolean rta;
+    int residuo;
+    int invertido = 0;
+    int aux = numero;
+
+    while (numero != 0) {
+        residuo = numero % 10;
+        invertido = invertido * 10 + residuo;
+        numero = numero / 10;
+    }
+    rta = invertido == aux;
+    return rta;
+}
+
+public static void main(String[] args) {
+    boolean probar;
+
+    System.out.println("Capicuas de 4 cifras:");
+    for (int i = 1000; i < 10000; i++) {
+        int num = i;
+        probar = esCapicua(num);
+
+        if (true ==probar) {
+            System.out.println(num);
+        }
+    }
+
+}
+
+}
